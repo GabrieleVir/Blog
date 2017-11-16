@@ -1,2 +1,19 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<div class="col-md-4 col-md-offset-4">
+  <h1>Liste des articles</h1>
+</div>
+
+<table class="table table-bordered col-md-12">
+  <tr>
+    <th>#</th>
+    <th>Titre</th>
+    <th>Option</th>
+  </tr>
+  <% @articles.each do |article| %>
+  <tr>
+    <th><%= article.id %></th>
+    <td><%= article.title %></td>
+    <td><%= link_to "Montrer l'article", articles_show_path(article.id), class: "btn btn-primary" %></td>
+  </tr>
+  <% end %>
+
+</table>

@@ -1,2 +1,14 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div class="row">
+  <div class="col-md-6">
+    <h1>Informations sur l'article</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <p><strong>ID</strong>: <%= @article.id %></p>
+    <p><strong>Titre</strong>: <%= @article.title %></p>
+    <p><strong>Contenu</strong>: <%= @article.content %></p>
+    <%= image_tag(@article.fun,height: '120', width: '120' ) %>
+  </div>
+</div>

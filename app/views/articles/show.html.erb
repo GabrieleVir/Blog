@@ -10,5 +10,23 @@
     <p><strong>Titre</strong>: <%= @article.title %></p>
     <p><strong>Contenu</strong>: <%= @article.content %></p>
     <%= image_tag(@article.fun,height: '120', width: '120' ) %>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <% @article.comments.each do |comment| %>
+      <p><%= comment.author %></p>
+      <p><%= comment.content %></p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+  <%= link_to "Créer un commentaire", new_comment_path(@article.id), class: "btn btn-primary" %>
+
+  <%= link_to "Accueil", root_path, class: "btn btn-success" %>
   </div>
 </div>

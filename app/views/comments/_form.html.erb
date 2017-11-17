@@ -1,0 +1,25 @@
+<%= form_tag(create_comment_path, method: :post) do %>
+
+  <div class="form-group">
+    <label for="author">Auteur:</label>
+    <br>
+    <input type="text" name="author" id="author" placeholder="auteur" />
+  </div>
+  <div class="form-group">
+    <label for="content">Commentaire:</label>
+    <br>
+    <textarea name="content" id="content" cols="20" rows="10"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="article_id">Article :</label>
+    <select name="article_id">
+      <% @articles.each do |article| %>
+        <option value="<%= article.id %>"><%= article.title %></option>
+      <% end %>
+    </select>
+  </div>
+    <input type="submit" value="Ajouter un commentaire" class="btn btn-primary">
+  </div>
+
+<% end %>

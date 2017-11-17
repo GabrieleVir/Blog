@@ -12,7 +12,7 @@
   <tr>
     <th><%= article.id %></th>
     <td><%= article.title %></td>
-    <td><%= link_to "Montrer l'article", articles_show_path(article.id), class: "btn btn-primary" %></td>
+    <td><%= link_to "Montrer l'article", article_show_path(article.id), class: "btn btn-primary" %></td>
   </tr>
   <% end %>
 
